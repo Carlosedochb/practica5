@@ -27,7 +27,7 @@ jobs:
 
       - name: Build
         run: npm run build
-        
+
       - name: Publish
         uses: actions/upload-artifact@v4
         with:
@@ -52,5 +52,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: deploy dist/practice4/index.js --name divine-mode-b0ae --compatibility-date 2026-02-26 --compatibility-flags=nodejs_compat --assets dist/client
+          command: deploy dist/practice4/index.js --name practica5 --compatibility-date 2026-02-26 --compatibility-flags=nodejs_compat --assets dist/client
  
