@@ -50,7 +50,7 @@ jobs:
       - name: Deploy-Dev
         uses: cloudflare/wrangler-action@v3
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.API_TOKEN }}
+          accountId: ${{ secrets.ACCOUNT_ID }}
           command: deploy dist/practice4/index.js --name practica5 --compatibility-date 2026-02-26 --compatibility-flags=nodejs_compat --assets dist/client
  
