@@ -42,7 +42,7 @@ jobs:
 
     steps:
       - name: Download artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v3
         with:
           name: dist
           path: dist/
@@ -50,7 +50,7 @@ jobs:
       - name: Deploy Dev
         uses: cloudflare/wrangler-action@v3
         with:
-          apiToken: ${{ secrets.API_TOKEN_DEV }}
+          apiToken: ${{ secrets.API_TOKEN }}
           accountId: ${{ secrets.ACCOUNT_ID }}
           command: deploy dist/practice4/index.js --name practica5-dev --compatibility-date 2026-02-26 --compatibility-flags=nodejs_compat --assets dist/client
 
@@ -70,6 +70,6 @@ jobs:
       - name: Deploy Production
         uses: cloudflare/wrangler-action@v3
         with:
-          apiToken: ${{ secrets.API_TOKEN_PROD }}
+          apiToken: ${{ secrets.API_TOKEN }}
           accountId: ${{ secrets.ACCOUNT_ID }}
           command: deploy dist/practice4/index.js --name practica5-prod --compatibility-date 2026-02-26 --compatibility-flags=nodejs_compat --assets dist/client
